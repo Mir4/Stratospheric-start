@@ -1,0 +1,124 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	ifstream x("D:\\111\\gyrox.txt"), y("D:\\111\\gyroy.txt"), z("D:\\111\\gyroz.txt");
+	ifstream x1("D:\\111\\accelx.txt"), y1("D:\\111\\accely.txt"), z1("D:\\111\\accelz.txt");
+	ofstream gx("D:\\111\\DIgyrox.txt"), gy("D:\\111\\DIgyroy.txt"), gz("D:\\111\\DIgyroz.txt");
+	ofstream ax("D:\\111\\DIaccelx.txt"), ay("D:\\111\\DIaccely.txt"), az("D:\\111\\DIaccelz.txt");
+	int n = 0;
+	float angle = 0, prevangle, aspeed, delta = 0.33;
+	if (x)
+	{
+		while (!x.eof())
+		{
+			x >> aspeed;
+			prevangle = angle;
+			angle = prevangle + aspeed*delta;
+			n++;
+			cout << angle << endl;
+			gx << angle << endl;
+			if (n == 1739)
+				break;
+			else;
+		}
+		x.close();
+	}
+	else cout << "File not found" << endl;
+
+	if (y)
+	{
+		while (!y.eof())
+		{
+			y >> aspeed;
+			prevangle = angle;
+			angle = prevangle + aspeed*delta;
+			n++;
+			cout << angle << endl;
+			gy << angle << endl;
+			if (n == 1739)
+				break;
+			else;
+		}
+		y.close();
+	}
+	else cout << "File not found" << endl;
+
+	if (z)
+	{
+		while (!z.eof())
+		{
+			z >> aspeed;
+			prevangle = angle;
+			angle = prevangle + aspeed*delta;
+			n++;
+			cout << angle << endl;
+			gz << angle << endl;
+			if (n == 1739)
+				break;
+			else;
+		}
+		z.close();
+	}
+	else cout << "File not found" << endl;
+
+	if (x1)
+	{
+		while (!x1.eof())
+		{
+			x1 >> aspeed;
+			prevangle = angle;
+			angle = prevangle + aspeed*delta;
+			n++;
+			cout << angle << endl;
+			ax << angle << endl;
+			if (n == 1739)
+				break;
+			else;
+		}
+		x1.close();
+	}
+	else cout << "File not found" << endl;
+
+	if (y1)
+	{
+		while (!y1.eof())
+		{
+			y1 >> aspeed;
+			prevangle = angle;
+			angle = prevangle + aspeed*delta;
+			n++;
+			cout << angle << endl;
+			ay << angle << endl;
+			if (n == 1739)
+				break;
+			else;
+		}
+		y1.close();
+	}
+	else cout << "File not found" << endl;
+
+	if (z1)
+	{
+		while (!z1.eof())
+		{
+			z1 >> aspeed;
+			prevangle = angle;
+			angle = prevangle + aspeed*delta;
+			n++;
+			cout << angle << endl;
+			az << angle << endl;
+			if (n == 1739)
+				break;
+			else;
+		}
+		z1.close();
+	}
+	else cout << "File not found" << endl;
+
+	system("pause");
+	return 0;
+}
