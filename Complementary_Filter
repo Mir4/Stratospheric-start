@@ -1,0 +1,76 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+	ifstream x("D:\\111\\DIgyrox.txt"), y("D:\\111\\DIgyroy.txt"), z("D:\\111\\DIgyroz.txt");
+	ifstream x1("D:\\111\\DIaccelx.txt"), y1("D:\\111\\DIaccely.txt"), z1("D:\\111\\DIaccelz.txt");
+	ofstream complementary_filter("D:\\Stratospheric start\\Out CF.txt");
+	double O, acc, gyr, K = 0.25, C = 1;
+
+	if (x)
+	{
+		while (!x.eof())
+		{
+			x >> gyr;
+			x1 >> acc;
+			O = (C - K)*gyr + K*acc;
+
+			cout << O << endl;
+			complementary_filter << O << endl;
+		}
+		x.close();
+		x1.close();
+	}
+
+	else
+	{
+		cout << "File not found" << endl;
+	}
+
+
+	if (y)
+	{
+		while (!y.eof())
+		{
+			y >> gyr;
+			y1 >> acc;
+			O = (C - K)*gyr + K*acc;
+
+			cout << O << endl;
+			complementary_filter << O << endl;
+		}
+		y.close();
+		y1.close();
+	}
+
+	else
+	{
+		cout << "File not found" << endl;
+	}
+
+	if (z)
+	{
+		while (!z.eof())
+		{
+			z >> gyr;
+			z1 >> acc;
+			O = (C - K)*gyr + K*acc;
+
+			cout << O << endl;
+			complementary_filter << O << endl;
+		}
+		z.close();
+		z1.close();
+	}
+
+	else
+	{
+		cout << "File not found" << endl;
+	}
+
+	system("pause");
+	return 0;
+}
